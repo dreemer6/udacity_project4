@@ -1,4 +1,7 @@
-<include a CircleCI status badge, here>
+
+# Operationalizing a Machine Learning Microservice API
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/dreemer6/udacity_project4/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/dreemer6/udacity_project4/tree/main)
 
 ## Project Overview
 
