@@ -1,7 +1,7 @@
 
 # Operationalizing a Machine Learning Microservice API
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/dreemer6/udacity_project4/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/dreemer6/udacity_project4/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/uche-madu/udacity_project4/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/uche-madu/udacity_project4/tree/main)
 
 ## Project Overview
 
