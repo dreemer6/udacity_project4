@@ -19,28 +19,36 @@ In this project, I:
 
 ## Setup the Environment
 
-* Create a virtualenv with Python 3.7 and activate it.
-```bash
-python3 -m pip install --user virtualenv
-# You should have Python 3.7 available in your host. 
-# Check the Python path using `which python3`
-# Use a command similar to this one:
-python3 -m virtualenv --python=<path-to-Python3.7> .devops
-source .devops/bin/activate
-```
-Alternatively, run `make setup` to create and source the virtual environment
-
+* Create a virtualenv and activate it
+Due to python3.7 are no longer availble in the installation packages, I used conda to create virtual enrinmrenet because I can still install python3.7 with conda.  I have miniconda3 installed on my local computer
+* Run `source ~/miniconda3/bin/activate` to activate conda 
+* Run `conda create -n .devops python=3.7` to create virtual env with python3.7 installed 
+* Run `conda activate .devops` to activate venv `.devops`
 * Run `make install` to install the necessary dependencies
+* Run `make lint`  (pylint app.py files and hadolint Dockerfile) to detect errors in the code.  
+* can also run `make all` instead of previous two steps.  
 
 ### Running `app.py`
 
 1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
+2. Run in Docker:  `./run_docker.sh`   
 3. Run in Kubernetes:  `./run_kubernetes.sh`
 
 ### Kubernetes Steps
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+1. Setup and Configure Docker locally
+    * install docker as described in the [link](https://docs.docker.com/engine/install/ubuntu/).
+    * Run `./run_docker.sh`
+    * Run `docker ps` to check if docker is running.
+    * Run `./make_prediction.sh` to make prediction and copy/paste the logging info at terminal to `output_txt_files/docker_out.txt`
+2. Setup and Configure Kubernetes locally
+    * Run `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`
+    * Run `sudo install minikube-linux-amd64 /usr/local/bin/minikube`
+    * Run `minikube start` to start minikube
+    * Run `kubectl get pods` to see which pods are running.
+    * Run `./run_kubernetes.sh`
+    * Run `./make_prediction.sh` to make prediction and copy/paste the logging info at terminal to `output_txt_files/kubernetes_out.txt`
+3. Create Flask app in Container
+    * Run `./run_docker.sh` to build and start the Flask app container. 
+    * Run `./upload_docker.sh` to upload the container to docker hub.   
+
