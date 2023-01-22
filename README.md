@@ -40,14 +40,14 @@ Due to python3.7 are no longer availble in the installation packages, I used con
     * install docker as described in the [link](https://docs.docker.com/engine/install/ubuntu/).
     * Run `./run_docker.sh`
     * Run `docker ps` to check if docker is running.
-    * Run `./make_prediction.sh` to make prediction and copy/paste the logging info at terminal to `output_txt_files/docker_out.txt`
+    * Run `./make_prediction.sh` to make a prediction
 2. Setup and Configure Kubernetes locally
     * Run `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`
     * Run `sudo install minikube-linux-amd64 /usr/local/bin/minikube`
     * Run `minikube start` to start minikube
     * Run `kubectl get pods` to see which pods are running.
     * Run `./run_kubernetes.sh`
-    * Run `./make_prediction.sh` to make prediction and copy/paste the logging info at terminal to `output_txt_files/kubernetes_out.txt`
+    * Run `./make_prediction.sh` to make a prediction
 3. Create Flask app in Container
     * Run `./run_docker.sh` to build and start the Flask app container. 
     * Run `./upload_docker.sh` to upload the container to docker hub.   
